@@ -1,0 +1,24 @@
+.show-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-gap: 0 20px;
+}
+
+.show-list img {
+	width: 100%;
+	height: 400px;
+	align-self: center;
+	display: flex;
+}
+
+.ui.card:first-child{
+	margin: 1em 0;
+}
+
+.ui.card:last-child{
+	margin: 1em 0;
+}
+
+.ui.card{
+	padding-bottom: 10px;
+}
