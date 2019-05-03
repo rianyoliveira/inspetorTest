@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import imageDefault from './image-default.png';
 import GenresLabel from './GenresLabel.js';
 
@@ -9,13 +10,14 @@ class ImageCard extends React.Component {
 
 		return (
 			<div className="ui fluid card">
-				<a href="/ShowDetails" id={id} style={{ color: 'teal' }} >
+				<Link to={`/show/${id}`} id={id} >
 					{image ? <img src={image.original} alt={name} /> : <img src={imageDefault} alt={name} /> }
+					
 					<div className="ui items" style={{ padding: '0 10px' }}>
-						<h4>{name}</h4>
+						<h4 className="ui header">{name}</h4>
 						<GenresLabel genres={genres} />
 					 </div>
-				</a>
+				</Link>
 			</div>
 		);
 	}
