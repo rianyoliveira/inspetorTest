@@ -1,8 +1,8 @@
 import React from 'react';
 import './ShowList.css';
-import Nav from './Nav';
+import Nav from '../components/Nav';
 import tvmaze from '../api/tvmaze';
-import ImageCard from './ImageCard';
+import ImageCard from '../components/ImageCard';
 
 class ShowList extends React.Component {
 	
