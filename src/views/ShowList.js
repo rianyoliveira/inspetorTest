@@ -1,8 +1,8 @@
 import React from 'react';
-import './ShowList.css';
+import '../css/ShowList.css';
 import Nav from '../components/Nav';
 import tvmaze from '../api/tvmaze';
-import ImageCard from '../components/ImageCard';
+import ShowCard from '../components/ShowCard';
 
 class ShowList extends React.Component {
 	
@@ -13,7 +13,7 @@ class ShowList extends React.Component {
 	}
 
 	componentDidMount() {
-		this.onSearchSubmit('robot');
+		this.onSearchSubmit(this.props.history.location.state || 'girls');
 	}
 
 	onSearchSubmit = async (term) => {
@@ -26,16 +26,16 @@ class ShowList extends React.Component {
 
 	showListRendered() {
 		return this.state.shows.map((showData) => {
-			return <ImageCard key={showData.show.id} show={showData.show} />
+			return <ShowCard key={showData.show.id} show={showData.show} />
 		});
 
 	}
 
 	render (){
 		return (
-			<div className="ui container" style={{ marginTop: '10px' }}>
+			<div className="ui fluid container" style={{ marginTop: '10px' }}>
 	  			<Nav onSubmit={this.onSearchSubmit} />
-	  			<div className="show-list">{this.showListRendered()}</div>
+	  			<div className="show-list" style={{ margin: 'auto', maxWidth: '1133px'}}>{this.showListRendered()}</div>
 			</div>
 		);
 	}

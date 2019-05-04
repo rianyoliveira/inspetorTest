@@ -24,11 +24,7 @@ class ShowDetails extends React.Component {
 
 
 	onSearchSubmit = async (term) => {
-		const response = await tvmaze.get('/search/shows',{
-			params: { q: term }
-		});
-
-		this.setState({ shows: response.data });
+		this.props.history.push('/', term);
 	}
 
 	dateToBR(date) {	
@@ -45,22 +41,21 @@ class ShowDetails extends React.Component {
 		return (
 			<div className="ui container" style={{ marginTop: '10px' }}>
 		  		<Nav onSubmit={this.onSearchSubmit} />
+
 		  		<div className="ui segment">
 		  			<div className="ui stackable items">
 					  <div className="item">
-					    <div className="image">
-					        {image ? <img src={image.original} alt={name} style={{ width: '250px' }} /> : <img src={imageDefault} alt={name} /> }
+					    <div className="ui image medium left floated">
+					        { image ? <img src={image.original} alt={name} /> : <img src={imageDefault} alt={name} /> }
 					    </div>
-					    <div className="content" style={{ marginLeft: '80px' }}>
-					      <div className="header">{name}</div><br />
-					      <div className="ui sub header">Data de Lançamento: {premiered}</div>
+					    <div className="content">
+					      <div className="ui huge header">{name}</div><br />
+					      <div className="ui sub header">Data de Lançamento: {premiered ? this.dateToBR(premiered) : '' }</div>
 			
 						<div style={{ marginBottom: '20px', 'marginTop': '20px' }}>
-					      <div className="meta">
-					        <span>Sinopse:</span>
-					      </div>
+					       <h5 className="ui gray dividing header">Sinopse </h5>
 					      <div className="description">
-					       {summary ? <div dangerouslySetInnerHTML={this.summaryText()} /> : ''}
+					       { summary ? <div dangerouslySetInnerHTML={this.summaryText()} /> : '' }
 					      </div>
 					     </div>
 					      <div className="extra">
