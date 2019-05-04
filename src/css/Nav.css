@@ -1,0 +1,13 @@
+.ui.container {
+	margin-top: 10px;
+}
+
+.ui.secondary.menu {
+	display: flex;
+	align-items: center;
+}
+
+.ui.fluid.image {
+	width: 200px;
+	min-width: 120px;
+}

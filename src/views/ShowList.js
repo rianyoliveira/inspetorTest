@@ -33,13 +33,12 @@ class ShowList extends React.Component {
 
 	render (){
 		return (
-			<div className="ui fluid container" style={{ marginTop: '10px' }}>
+			<div className="ui fluid container">
 	  			<Nav onSubmit={this.onSearchSubmit} />
-	  			<div className="show-list" style={{ margin: 'auto', maxWidth: '1133px'}}>{this.showListRendered()}</div>
+	  			<div className="show-list list">{this.showListRendered()}</div>
 			</div>
 		);
 	}
 }
-
 
 export default ShowList;

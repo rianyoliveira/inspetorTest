@@ -1,0 +1,11 @@
+.ui.container {
+	margin-top: 10px;
+}
+
+.heart.icon {
+	cursor: pointer;
+}
+
+.summary {
+	margin: 20px 0;
+}

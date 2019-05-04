@@ -1,0 +1,11 @@
+.heart.icon {
+	cursor: pointer;
+}
+
+.ui.items {
+	padding: 0 10px;
+}
+
+.ui.hidden.divider {
+	margin: 0;
+}

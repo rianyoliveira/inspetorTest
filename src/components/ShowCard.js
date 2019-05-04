@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/ShowCard.css';
 import { Link } from 'react-router-dom';
 import imageDefault from './image-default.png';
 import GenresLabel from './GenresLabel.js';
@@ -21,18 +22,19 @@ class ImageCard extends React.Component {
 		return (
 			<div className="ui fluid card">
 				<div className={`ui right mini corner label ${ this.state.favorite ? 'teal' : ''}`} onClick={this.addFavorite}>
-			       	<i className="heart icon"></i>
-			     </div>
+			    	<i className="heart icon"></i>
+			    </div>
 				<Link to={`/show/${id}`} id={id} >	
-				 <div className="image">
-      				{image ? <img src={image.original} alt={name} /> : <img src={imageDefault} alt={name} /> }
-      			</div>
+					<div className="image">
+      					{image ? <img src={image.original} alt={name} /> : <img src={imageDefault} alt={name} /> }
+      				</div>
 				</Link>
-				<div className="ui items" style={{ padding: '0 10px' }}>
+				<div className="ui items">
 					<Link to={`/show/${id}`} id={id} >	 
-						<h4 className="ui header">{name}</h4>
-						<GenresLabel genres={genres} />
+						<h3 className="ui header">{name}</h3>
+						<div className="ui hidden divider"></div>
 					</Link>
+					<GenresLabel genres={genres} />	
 				</div>
 			</div>
 		);

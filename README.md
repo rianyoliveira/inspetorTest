@@ -2,7 +2,7 @@
 
 ## Configuração
 1. Para a execução e teste do projeto é necessário acessá-lo pelo comando `git clone https://github.com/rianyoliveira/inspetorTest.git` ou fazer o download do arquivo `.zip`.
-2. Após ter feito isso, abra a pasta onde se encontra o mesmo pelo prompt de comando e execute o comando `npm install`.
+2. Após ter feito isso, pelo prompt de comando abra a pasta onde se encontra o mesmo e execute o comando `npm install`.
 3. Depois de concluída a instalação do projeto e dependências, execute o comando `npm start` para iniciar a aplicação no servidor local. Será aberto uma nova guia no seu navegador no endereço `localhost:3000` para testá-lo.
 
 ## Estrutura dos diretórios
@@ -17,6 +17,9 @@
 		- Nav.js
 		- SearchBar.js
 	|- css
+		- Nav.css
+		- ShowCard.css
+		- ShowDetails.css
 		- ShowList.css
 	|- router
 		- Router.js
