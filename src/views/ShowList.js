@@ -35,7 +35,15 @@ class ShowList extends React.Component {
 		return (
 			<div className="ui fluid container">
 	  			<Nav onSubmit={this.onSearchSubmit} />
-	  			<div className="show-list list">{this.showListRendered()}</div>
+	  			{ this.state.shows.length === 0 ?
+	  				<div className="ui container placeholder segment">
+	  					<div className="ui icon header">
+    						<i className="search icon"></i>
+    						Não foram encontradas séries correspondentes com a sua pesquisa
+  						</div>
+  					</div> :
+  					<div className="show-list list">{this.showListRendered()}</div>
+	  			}
 			</div>
 		);
 	}
